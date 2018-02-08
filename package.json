@@ -10,6 +10,6 @@
     "gulp-if": "latest",
     "gulp-jsmin": "^0.1.5",
     "gulp-load-plugins": "latest",
-    "gulp-sass": "latest",
+    "gulp-sass": "latest"
   }
 }
