@@ -1,0 +1,15 @@
+{
+  "name": "Onepoint",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-cssbeautify": "latest",
+    "gulp-csscomb": "latest",
+    "gulp-csso": "latest",
+    "gulp-if": "latest",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-load-plugins": "latest",
+    "gulp-sass": "latest",
+  }
+}
