@@ -1,5 +1,87 @@
+@import 'variables.scss' ;
+
 body {
     color: white;
     font-size: 18px;
-    background: blue;
+    background: $blue_light;
+    font-family: sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    transition: all .4s ease;
+}
+
+.txt_red {
+    color: $red;
+}
+
+
+.grid {
+    .grid-item {
+        width: 300px;
+        display: inline-block;
+        height: auto;
+        position: relative;
+        margin: 5px;
+        background: $blue_dark;
+        &:hover {
+            .item-img_wrapper {
+                border: 10px solid $blue_dark;
+            }
+            .item-title_wrapper {
+                bottom: 15px;
+            }
+        }
+    }
+
+    .grid-title {
+        margin: 0px;
+        text-align: left;
+        font-size: 26px;
+        text-transform: uppercase;
+        &--thick {
+            font-weight: 800;
+        }
+        &--thin {
+            font-weight: 200;
+        }
+    }
+    .item-img {
+        width: 100%;
+    }
+
+    .item-img_wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0px solid $blue_dark;
+    }
+
+    .item-title_wrapper {
+        position: absolute;
+        background: $blue_dark;
+        text-align: right;
+        padding: 20px 15px;
+        bottom: 0px;
+        width: 100%;
+    }
+    .item-title {
+        font-size: 18px;
+        text-transform: uppercase;
+        line-height: 1em;
+        margin: 0;
+
+    }
+}
+
+.main {
+    width: 100%;
+    .main-grid {
+        .grid-item {
+
+        }
+    }
 }
