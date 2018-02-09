@@ -26,7 +26,10 @@ body {
         position: relative;
         background: $blue_dark;
         margin-bottom: 10px;
+        perspective: 1000;
+        overflow: hidden;
         &--image {
+            cursor: pointer;
             &:hover {
                 .item-hover_border {
                     border: 10px solid $blue_dark;
@@ -41,6 +44,40 @@ body {
                 bottom: 0px;
             }
         }
+        &--flipped {
+            .item-front{
+                transform: rotateY(180deg);
+            }
+            .item-back{
+                transform: rotateY(0deg);
+            }
+        }
+    }
+    .item-flipper {
+        transform-style: preserve-3d;
+        position: relative;
+    }
+    .item-front {
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        z-index: 2;
+        transform: rotateY(0deg);
+    }
+    .item-back {
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        transform: rotateY(180deg);
+        padding: 15px;
+    }
+
+    .item-body {
+        margin: 0px;
+        font-style: italic;
     }
 
     .grid-title {
@@ -66,6 +103,7 @@ body {
         border: 0px solid $blue_dark;
         width: 100%;
         height: 100%;
+        z-index: 555;
     }
 
     .item-title_wrapper {
@@ -93,6 +131,7 @@ body {
 }
 
 
+/** adapt main container to fit the maximum number of image that can be display per row, so it can be centered**/
 @media screen and (max-width: 2180px) {.main{max-width: 1860px}}
 @media screen and (max-width: 1870px) {.main{max-width: 1550px;}}
 @media screen and (max-width: 1560px) {.main{max-width: 1240px;}}

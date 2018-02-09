@@ -20,10 +20,17 @@ body {
 .grid .grid-item {
   position: relative;
   display: inline-block;
+  overflow: hidden;
   width: 300px;
   height: auto;
   margin-bottom: 10px;
   background: #2e3444;
+  -webkit-perspective: 1000;
+          perspective: 1000;
+}
+
+.grid .grid-item--image {
+  cursor: pointer;
 }
 
 .grid .grid-item--image:hover .item-hover_border {
@@ -38,6 +45,52 @@ body {
   position: absolute;
   bottom: 0;
   text-align: right;
+}
+
+.grid .grid-item--flipped .item-front {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.grid .grid-item--flipped .item-back {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+.grid .item-flipper {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.grid .item-front {
+  z-index: 2;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.grid .item-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.grid .item-body {
+  font-style: italic;
+  margin: 0;
 }
 
 .grid .grid-title {
@@ -61,6 +114,7 @@ body {
 
 .grid .item-hover_border {
   position: absolute;
+  z-index: 555;
   top: 0;
   left: 0;
   width: 100%;
@@ -86,6 +140,7 @@ body {
   margin: 0 auto;
 }
 
+/** adapt main container to fit the maximum number of image that can be display per row, so it can be centered**/
 @media screen and (max-width: 2180px) {
   .main {
     max-width: 1860px;
