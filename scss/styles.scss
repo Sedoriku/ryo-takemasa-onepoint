@@ -5,6 +5,7 @@ body {
     font-size: 18px;
     background: $blue_light;
     font-family: sans-serif;
+    margin: 10px;
 }
 
 * {
@@ -23,8 +24,8 @@ body {
         display: inline-block;
         height: auto;
         position: relative;
-        margin: 5px;
         background: $blue_dark;
+        margin-bottom: 10px;
         &--image {
             &:hover {
                 .item-hover_border {
@@ -83,9 +84,18 @@ body {
 
 .main {
     width: 100%;
+    margin: 0 auto;
     .main-grid {
         .grid-item {
 
         }
     }
 }
+
+
+@media screen and (max-width: 2180px) {.main{max-width: 1860px}}
+@media screen and (max-width: 1870px) {.main{max-width: 1550px;}}
+@media screen and (max-width: 1560px) {.main{max-width: 1240px;}}
+@media screen and (max-width: 1250px) {.main{max-width: 930px;}}
+@media screen and (max-width: 940px) {.main{max-width: 620px;}}
+@media screen and (max-width: 630px) {.main{max-width: 300px;}}
